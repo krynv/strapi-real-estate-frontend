@@ -2,14 +2,8 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import useProperties from "../hooks/usePropertes";
 import axios from "axios";
-import styled from "@emotion/styled";
 import useFilter from "../hooks/useFilter";
-
-const Container = styled.div`
-  margin: 0 auto;
-  width: 95%;
-  max-width: 1200px;
-`;
+import { Container } from "../styledComponents";
 
 const Home = () => {
   const [properties, setProperties] = useState([]);
@@ -49,7 +43,7 @@ const Home = () => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
           integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
       </Head>
 
