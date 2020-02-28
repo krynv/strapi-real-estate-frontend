@@ -14,14 +14,23 @@ const Grid = styled.div`
   }
 `;
 
+const Card = styled.div`
+  border: 1px solid #b5b5b5;
+  background-color: #f5f5f5;
+
+  img {
+    max-width: 100%l;
+  }
+`;
+
 export default properties => {
   console.log(properties);
   const Properties = () => (
     <Grid>
       {properties.map(property => (
-        <div>
+        <Card>
           <img src={`http://localhost:1337${property.image[0].url}`} />
-        </div>
+        </Card>
       ))}
     </Grid>
   );
