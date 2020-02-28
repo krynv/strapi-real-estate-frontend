@@ -13,18 +13,29 @@ const Container = styled.div`
 
 const Home = () => {
   const [properties, setProperties] = useState([]);
-  const { Properties } = useProperties(properties);
+  const [filtered, setFiltered] = useState([]);
+  const { Properties } = useProperties(filtered);
   const { category, FilterUI } = useFilter();
 
   useEffect(() => {
-    const getProperties = async () => {
-      const result = await axios.get(`http://localhost:1337/properties`);
+    if (category) {
+      // filter the properties
+      const filtered = properties.find(property =>
+        property.categories.find(cat => cat.id == category)
+      );
+      setFiltered([filtered]);
+    } else {
+      // get data from api
+      const getProperties = async () => {
+        const result = await axios.get(`http://localhost:1337/properties`);
 
-      setProperties(result.data);
-    };
+        setProperties(result.data);
+        setFiltered(result.data);
+      };
 
-    getProperties();
-  }, []);
+      getProperties();
+    }
+  }, [category]);
 
   return (
     <Container>

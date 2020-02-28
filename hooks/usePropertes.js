@@ -56,11 +56,10 @@ const Content = styled.div`
 `;
 
 export default properties => {
-  console.log(properties);
   const Properties = () => (
     <Grid>
       {properties.map(property => (
-        <Card>
+        <Card key={property.id}>
           <img src={`http://localhost:1337${property.image[0].url}`} />
           <Content>
             <h3>{property.name}</h3>
