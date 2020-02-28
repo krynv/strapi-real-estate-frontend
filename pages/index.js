@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import useProperties from "../hooks/usePropertes";
 import axios from "axios";
+
 import useFilter from "../hooks/useFilter";
+import useProperties from "../hooks/usePropertes";
 import { Container } from "../styledComponents";
 
 const Home = () => {
