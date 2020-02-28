@@ -1,6 +1,8 @@
 # strapi-real-estate-frontend
 
-The front-end to the Strapi powered Real Estate web app
+The front-end to the Strapi powered Real Estate web app.
+
+Uses React & Hooks to display data fetched from the back-end API.
 
 ## Setup
 
