@@ -19,7 +19,7 @@ const Card = styled.div`
   background-color: #f5f5f5;
 
   img {
-    max-width: 100%l;
+    max-width: 100%;
   }
 `;
 
