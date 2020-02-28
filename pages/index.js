@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Home = () => {
   const [properties, setProperties] = useState([]);
-  const { Properties } = useProperties();
+  const { Properties } = useProperties(properties);
 
   useEffect(() => {
     const getProperties = async () => {
