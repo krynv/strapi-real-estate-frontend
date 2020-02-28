@@ -14,7 +14,7 @@ const Container = styled.div`
 const Home = () => {
   const [properties, setProperties] = useState([]);
   const { Properties } = useProperties(properties);
-  const { FilterUI } = useFilter();
+  const { category, FilterUI } = useFilter();
 
   useEffect(() => {
     const getProperties = async () => {
