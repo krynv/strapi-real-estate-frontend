@@ -3,6 +3,7 @@ import Head from "next/head";
 import useProperties from "../hooks/usePropertes";
 import axios from "axios";
 import styled from "@emotion/styled";
+import useFilter from "../hooks/useFilter";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -13,6 +14,7 @@ const Container = styled.div`
 const Home = () => {
   const [properties, setProperties] = useState([]);
   const { Properties } = useProperties(properties);
+  const { FilterUI } = useFilter();
 
   useEffect(() => {
     const getProperties = async () => {
@@ -39,6 +41,8 @@ const Home = () => {
           crossorigin="anonymous"
         />
       </Head>
+
+      <FilterUI />
 
       <h2 style={{ textAlign: "center", fontFamily: "Lato, sans-serif" }}>
         Properties
