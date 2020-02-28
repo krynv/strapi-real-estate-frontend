@@ -30,6 +30,14 @@ export default properties => {
       {properties.map(property => (
         <Card>
           <img src={`http://localhost:1337${property.image[0].url}`} />
+          <>
+            <h3>{property.name}</h3>
+            <ul>
+              <li>Bedrooms: {property.bedrooms}</li>
+              <li>Bathrooms: {property.bathrooms}</li>
+              <li>Parking: {property.parking}</li>
+            </ul>
+          </>
         </Card>
       ))}
     </Grid>
