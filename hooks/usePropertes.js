@@ -23,6 +23,38 @@ const Card = styled.div`
   }
 `;
 
+const Content = styled.div`
+  padding: 1rem;
+  h3 {
+    margin: 0 0 2rem 0;
+    font-size: 1.4rem;
+    font-family: "Lato", sans-serif;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  ul li {
+    display: flex;
+  }
+
+  ul li p {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+
+  ul li img {
+    height: 25px;
+    width: 25px;
+    margin-right: 1rem;
+  }
+`;
+
 export default properties => {
   console.log(properties);
   const Properties = () => (
@@ -30,14 +62,23 @@ export default properties => {
       {properties.map(property => (
         <Card>
           <img src={`http://localhost:1337${property.image[0].url}`} />
-          <>
+          <Content>
             <h3>{property.name}</h3>
             <ul>
-              <li>Bedrooms: {property.bedrooms}</li>
-              <li>Bathrooms: {property.bathrooms}</li>
-              <li>Parking: {property.parking}</li>
+              <li>
+                <img src="assets/img/bed.svg" />
+                <p>{property.bedrooms}</p>
+              </li>
+              <li>
+                <img src="assets/img/toilet.svg" />
+                <p>{property.bathrooms}</p>
+              </li>
+              <li>
+                <img src="assets/img/car.svg" />
+                <p>{property.parking}</p>
+              </li>
             </ul>
-          </>
+          </Content>
         </Card>
       ))}
     </Grid>
